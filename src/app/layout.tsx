@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 
 import { Inter } from "next/font/google";
 
+import { cn } from "@/lib/utils";
 import { TRPCReactProvider } from "@/trpc/react";
 
 const inter = Inter({
@@ -22,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body className={cn("min-h-screen bg-background font-sans antialiased", inter.variable)}>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
